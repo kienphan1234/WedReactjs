@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* --- CÁC CỘT KHÁC GIỮ NGUYÊN --- */}
+        {/* --- CÁC CỘT liên hệ --- */}
         <div>
           <h4 className="text-white font-bold my-6  uppercase text-xs tracking-[0.2em]">Liên hệ</h4>
           <ul className="space-y-4 text-sm">

@@ -26,10 +26,6 @@ const Banner = () => {
 
         {/* --- PHẦN ẢNH (BÊN PHẢI) --- */}
         <div className="relative group flex justify-center">
-          {/* Một cái vòng tròn sáng sau lưng loa */}
-          <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-3xl scale-75 group-hover:scale-90 transition-transform duration-700"></div>
-
-          {/* Thay bằng ảnh loa của bạn ở đây */}
           <img
             src={myBanner}
             alt="Premium Speaker"
