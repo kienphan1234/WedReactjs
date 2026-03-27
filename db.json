@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Marshall Emberton II",
+      "price": 4500000,
+      "category": "Bluetooth",
+      "image": "https://images.unsplash.com/photo-1545453303-4907da6960b2?q=80&w=500",
+      "description": "Loa di động kháng nước cực tốt."
+    },
+    {
+      "id": "2",
+      "name": "JBL PartyBox 110",
+      "price": 9900000,
+      "category": "Party",
+      "image": "https://images.unsplash.com/photo-1589003077984-894e133dabab?q=80&w=500",
+      "description": "Âm thanh mạnh mẽ với đèn LED sôi động."
+    }
+  ],
+  "categories": [
+    { "id": "1", "name": "Loa Bluetooth" },
+    { "id": "2", "name": "Loa Karaoke" }
+  ]
+}
