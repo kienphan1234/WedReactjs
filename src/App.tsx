@@ -1,8 +1,10 @@
 
 import './App.css'
 import Banner from './components/Banner'
+import Categories from './components/Categories'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import TrustBadges from './components/TrustBadges'
 
 function App() {
 
@@ -11,6 +13,8 @@ function App() {
       <Header />
       <main>
         <Banner/>
+        <Categories/>
+        <TrustBadges />
       </main>
       {/* <Footer /> */}
       <Footer/>

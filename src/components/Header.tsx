@@ -12,7 +12,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a className="flex md:hidden" href=""><img src={myLogo} alt="" className='w-24' /></a>
         {/* --- 1. LOGO --- AND--- 2. MENU DÀNH CHO MÁY TÍNH --- */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-gray-300">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-white">
           <a href=""><img src={myLogo} alt="" className='w-24' /></a>
           <a href="#" className="hover:text-amber-500 transition-colors">Trang chủ</a>
           <a href="#" className="hover:text-amber-500 transition-colors">Loa</a>
@@ -25,27 +25,14 @@ const Header = () => {
         {/* --- 3. CÔNG CỤ (Search, Cart, User) --- */}
         <div className="flex items-center gap-5">
           {/* Thanh tìm kiếm ẩn hiện tinh tế */}
-          <div className="hidden lg:flex items-center bg-slate-200 border border-slate-300 rounded-full px-4 py-1.5 focus-within:border-amber-500 transition-all">
+          <div className="flex items-center bg-slate-200 border border-slate-300 rounded-full px-4 py-1.5 focus-within:border-amber-500 transition-all">
             <input
               type="text"
               placeholder="Tìm sản phẩm..."
-              className="bg-transparent text-sm text-black outline-none w-40 focus:w-80 transition-all"
+              className="bg-transparent text-sm text-black outline-none w-40 lg:focus:w-80 transition-all"
             />
             <Search className="w-4 h-4 text-gray-400" />
           </div>
-
-          {/* User Icon */}
-          <button className="text-gray-300 hover:text-amber-500 transition">
-            <User className="w-5 h-5" />
-          </button>
-
-          {/* Cart Icon với số lượng */}
-          <button className="relative text-gray-300 hover:text-amber-500 transition">
-            <ShoppingCart className="w-5 h-5" />
-            <span className="absolute -top-2 -right-2 bg-amber-500 text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-              0
-            </span>
-          </button>
 
           {/* Mobile Menu Toggle */}
           <button
