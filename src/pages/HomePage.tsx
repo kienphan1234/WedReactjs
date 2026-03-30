@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import thư viện animation
+import { motion } from 'framer-motion';
 import Banner from '../components/Banner';
 import Categories from '../components/Categories';
 import TrustBadges from '../components/TrustBadges';
