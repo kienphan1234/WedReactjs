@@ -16,12 +16,6 @@ const Banner = () => {
           <p className="text-slate-400 text-lg max-w-md leading-relaxed">
             Khám phá bộ sưu tập Loa & Tai nghe Bluetooth mới nhất từ Marshall, JBL và Bose. Trải nghiệm chất âm chân thực trong từng nốt nhạc.
           </p>
-
-          <div className="flex gap-4 pt-4">
-            <button className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-amber-500/20">
-              MUA NGAY
-            </button>
-          </div>
         </div>
 
         {/* --- PHẦN ẢNH (BÊN PHẢI) --- */}
@@ -29,7 +23,7 @@ const Banner = () => {
           <img
             src={myBanner}
             alt="Premium Speaker"
-            className="relative w-full max-w-[500px] object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-5 rounded-lg"
+            className="relative w-full max-w-[500px] object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-5 rounded-lg cursor-pointer"
           />
         </div>
 

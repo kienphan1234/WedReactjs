@@ -1,25 +1,28 @@
-
-import './App.css'
-import Banner from './components/Banner'
-import Categories from './components/Categories'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import TrustBadges from './components/TrustBadges'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import CollectionPage from './pages/CollectionPage';
 
 function App() {
-
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Banner/>
-        <Categories/>
-        <TrustBadges />
-      </main>
-      {/* <Footer /> */}
-      <Footer/>
-    </div>
-  )
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+
+        {/* Phần nội dung thay đổi tùy theo URL */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            {/* path="/collection/:type" giúp ta dùng 1 file cho nhiều loại Loa, Amply... */}
+            <Route path="/collection/:type" element={<CollectionPage />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

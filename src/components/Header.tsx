@@ -1,10 +1,13 @@
 
-import { ShoppingCart, Search, User, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import myLogo from '../assets/logo.png';
 import { useState } from 'react';
+import { FiPhone } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showSupport, setShowSupport] = useState(false);
   return (
     <header
       className="fixed top-0 w-full z-50 transition-all duration-300 bg-blue-700"
@@ -13,47 +16,68 @@ const Header = () => {
         <a className="flex md:hidden" href=""><img src={myLogo} alt="" className='w-24' /></a>
         {/* --- 1. LOGO --- AND--- 2. MENU DÀNH CHO MÁY TÍNH --- */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-white">
-          <a href=""><img src={myLogo} alt="" className='w-24' /></a>
-          <a href="#" className="hover:text-amber-500 transition-colors">Trang chủ</a>
-          <a href="#" className="hover:text-amber-500 transition-colors">Loa</a>
-          <a href="#" className="hover:text-amber-500 transition-colors">Amply</a>
-          <a href="#" className="hover:text-amber-500 transition-colors">Micro</a>
-          <a href="#" className="hover:text-amber-500 transition-colors">Đồ gia dụng</a>
-          <a href="#" className="hover:text-amber-500 transition-colors">Hỗ Trợ</a>
-        </nav>
-
-        {/* --- 3. CÔNG CỤ (Search, Cart, User) --- */}
-        <div className="flex items-center gap-5">
-          {/* Thanh tìm kiếm ẩn hiện tinh tế */}
-          <div className="flex items-center bg-slate-200 border border-slate-300 rounded-full px-4 py-1.5 focus-within:border-amber-500 transition-all">
-            <input
-              type="text"
-              placeholder="Tìm sản phẩm..."
-              className="bg-transparent text-sm text-black outline-none w-40 lg:focus:w-80 transition-all"
-            />
-            <Search className="w-4 h-4 text-gray-400" />
+          <Link to="/"><img src={myLogo} alt="" className='w-24' /></Link>
+          <Link to="/" className="hover:text-amber-500 transition-colors">Trang chủ</Link>
+          <Link to="/collection/loa" className="hover:text-amber-500 transition-colors">Loa</Link>
+          <Link to="/collection/amply" className="hover:text-amber-500 transition-colors">Amply</Link>
+          <Link to="/collection/micro" className="hover:text-amber-500 transition-colors">Micro</Link>
+          <Link to="/collection/do-gia-dung" className="hover:text-amber-500 transition-colors">Đồ gia dụng</Link>
+          <div className="relative">
+            <button
+              onClick={() => setShowSupport(!showSupport)}
+              className="hover:text-amber-500 transition-colors uppercase flex items-center gap-1 focus:outline-none"
+            >
+              Hỗ Trợ
+              <span className={`transition-transform ${showSupport ? 'rotate-180' : ''}`}>▼</span>
+            </button>
+            {showSupport && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white text-blue-700 shadow-xl rounded-md py-2 normal-case tracking-normal">
+                <a href="tel:00912619294" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 border-b border-gray-100">
+                  <FiPhone /> 00912619294
+                </a>
+                <a href="tel:0888533518" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100">
+                  <FiPhone /> 0888533518
+                </a>
+              </div>
+            )}
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
+        </nav>
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X /> : <Menu />}
+        </button>
       </div>
 
       {/* --- 4. MOBILE MENU (Hiện ra khi bấm trên điện thoại) --- */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-slate-800 absolute top-full left-0 w-full border-t border-gray-900 animate-in slide-in-from-top duration-300">
           <div className="flex flex-col p-6 gap-4 font-bold uppercase tracking-widest">
-            <a href="#" className="text-amber-500">Trang chủ</a>
-            <a href="#" className="text-white hover:text-amber-500">Loa</a>
-            <a href="#" className="text-white hover:text-amber-500">Amply</a>
-            <a href="#" className="text-white hover:text-amber-500s">Micro</a>
-            <a href="#" className="text-white hover:text-amber-500s">Đồ gia dụng</a>
-            <a href="#" className="text-white hover:text-amber-500s">Hỗ Trợ</a>
+            <Link to="/" className="text-amber-500">Trang chủ</Link>
+            <Link to="/collection/loa" className="text-white hover:text-amber-500">Loa</Link>
+            <Link to="/collection/amply" className="text-white hover:text-amber-500">Amply</Link>
+            <Link to="/collection/micro" className="text-white hover:text-amber-500">Micro</Link>
+            <Link to="/collection/do-gia-dung" className="text-white hover:text-amber-500">Đồ gia dụng</Link>
+            <div className="relative">
+              <button
+                onClick={() => setShowSupport(!showSupport)}
+                className="hover:text-amber-500 transition-colors uppercase flex items-center gap-1 focus:outline-none text-white"
+              >
+                Hỗ Trợ
+                <span className={`transition-transform ${showSupport ? 'rotate-180' : ''}`}>▼</span>
+              </button>
+              {showSupport && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white text-blue-700 shadow-xl rounded-md py-2 normal-case tracking-normal">
+                  <a href="tel:00912619294" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 border-b border-gray-100">
+                    <FiPhone /> 00912619294
+                  </a>
+                  <a href="tel:0888533518" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100">
+                    <FiPhone /> 0888533518
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

@@ -13,7 +13,7 @@ const TrustBadges = () => {
     <section className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         {badges.map((badge, index) => (
-          <div key={index} className="flex items-center gap-5 text-left p-6 bg-blue-500 rounded-2xl shadow-lg">
+          <div key={index} className="flex items-center gap-5 text-left p-6 bg-blue-500 rounded-2xl shadow-lg transition-transform duration-500 hover:-translate-y-5 cursor-pointer">
             <div className="p-4 bg-white rounded-full border border-amber-500/20 text-amber-500">
               <badge.icon size={28} strokeWidth={1.5} />
             </div>
