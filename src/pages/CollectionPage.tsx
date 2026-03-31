@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const CollectionPage = () => {
   const { type } = useParams(); // Lấy chữ 'loa' hoặc 'amply' từ thanh địa chỉ
@@ -33,9 +33,12 @@ const CollectionPage = () => {
               <div className="p-4">
                 <h3 className="font-semibold text-gray-700 mb-2 line-clamp-2 h-12">{item.name}</h3>
                 <p className="text-red-600 font-bold text-xl">{item.price}đ</p>
-                <button className="w-full mt-4 bg-blue-700 text-white py-2 rounded-md hover:bg-blue-800 transition-colors uppercase text-sm font-bold">
+                <Link
+                  to={`/product/${item.id}`}
+                  className="block w-full mt-4 bg-blue-700 text-white py-2 rounded-md hover:bg-blue-800 transition-colors uppercase text-sm font-bold text-center"
+                >
                   Chi tiết
-                </button>
+                </Link>
               </div>
             </div>
           ))}

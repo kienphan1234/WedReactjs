@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import categories1 from '../assets/categories1.jpg';
 import categories2 from '../assets/categories2.jpg';
 import categories3 from '../assets/categories3.jpg';
@@ -6,14 +7,17 @@ const categories = [
   {
     name: 'Amply',
     image: categories1,
+    url: '/collection/amply'
   },
   {
     name: 'Loa',
     image: categories2,
+    url: '/collection/loa'
   },
   {
     name: 'Đồ gia dụng',
     image: categories3,
+    url: '/collection/gia-dung'
   }
 ];
 
@@ -38,9 +42,9 @@ const Categories = () => {
 
               <div className="absolute bottom-0 left-0 p-8 w-full space-y-2">
                 <h3 className="text-2xl font-bold text-white tracking-tight">{category.name}</h3>
-                <button className="text-white text-sm font-semibold flex items-center gap-2 group-hover:text-amber-400 transition">
+                <Link to={category.url} className="text-white text-sm font-semibold flex items-center gap-2 group-hover:text-amber-400 transition">
                   Xem ngay
-                </button>
+                </Link>
               </div>
             </div>
           ))}

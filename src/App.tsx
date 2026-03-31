@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import CollectionPage from './pages/CollectionPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             {/* path="/collection/:type" giúp ta dùng 1 file cho nhiều loại Loa, Amply... */}
             <Route path="/collection/:type" element={<CollectionPage />} />
+            <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
         </main>
 
