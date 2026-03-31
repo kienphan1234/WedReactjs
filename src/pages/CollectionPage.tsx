@@ -1,13 +1,18 @@
 import { Link, useParams } from 'react-router-dom';
+import collection1 from '../assets/collection1.jpg';
+import collection2 from '../assets/collection2.jpg';
+import collection3 from '../assets/collection3.jpg';
+import collection4 from '../assets/collection4.jpg';
 
 const CollectionPage = () => {
   const { type } = useParams(); // Lấy chữ 'loa' hoặc 'amply' từ thanh địa chỉ
 
   // Giả lập dữ liệu (Sau này bạn gọi API hoặc Import từ file data riêng)
   const products = [
-    { id: 1, name: "Loa Karaoke JBL Bãi Nhật", category: "loa", price: "15.000.000", img: "https://picsum.photos/400/400" },
-    { id: 2, name: "Amply Jarguar 506N", category: "amply", price: "8.500.000", img: "https://picsum.photos/400/401" },
-    { id: 3, name: "Micro Shure UGX10", category: "micro", price: "2.500.000", img: "https://picsum.photos/400/402" },
+    { id: 1, name: "Loa Karaoke JBL Bãi Nhật", category: "loa", price: "15.000.000", img: collection3 },
+    { id: 2, name: "Amply Jarguar 506N", category: "amply", price: "8.500.000", img: collection2 },
+    { id: 3, name: "Micro Shure UGX10", category: "micro", price: "2.500.000", img: collection1 },
+    { id: 4, name: "Micro Shure UGX10", category: "do-gia-dung", price: "2.500.000", img: collection4 },
   ];
 
   // Lọc sản phẩm đúng loại

@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import { FiPhone } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
+import p1 from '../assets/p1.jpg';
+import p2 from '../assets/p2.jpg';
+import p3 from '../assets/p3.jpg';
+import p4 from '../assets/p4.jpg';
+import { body } from 'framer-motion/client';
 
 const ProductDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [quantity, setQuantity] = useState(1);
 
   // Giả lập dữ liệu sản phẩm
   const product = {
     id: id,
-    name: "Loa Karaoke JBL KP6012 G2 Professional",
-    price: 15500000,
-    oldPrice: 18000000,
-    description: "Dòng loa cao cấp chuyên dụng cho phòng hát karaoke kinh doanh và gia đình. Bass 30cm, công suất mạnh mẽ, âm thanh trung thực.",
+    name: "Amply JBL KP6012 G2 Professional",
+    price: 8500000,
+    oldPrice: 10000000,
+    description: "Dòng Amply cao cấp chuyên dụng cho phòng hát karaoke kinh doanh và gia đình. Bass 30cm, công suất mạnh mẽ, âm thanh trung thực.",
     specs: [
       { label: "Công suất", value: "350W - 1400W" },
       { label: "Tần số", value: "71Hz - 20kHz" },
@@ -20,11 +24,12 @@ const ProductDetailPage = () => {
       { label: "Trọng lượng", value: "14.7kg" }
     ],
     images: [
-      "https://picsum.photos/600/600",
-      "https://picsum.photos/600/601",
-      "https://picsum.photos/600/602",
-      "https://picsum.photos/600/603"
-    ]
+      p1,
+      p2,
+      p3,
+      p4
+    ],
+    body: "<h2>Đặc điểm nổi bật</h2><ul><li>Công suất mạnh mẽ, phù hợp cho phòng hát từ 20-40m².</li><li>Thiết kế hiện đại, dễ dàng phối ghép với các thiết bị âm thanh khác.</li><li>Hỗ trợ nhiều cổng kết nối, tiện lợi cho việc sử dụng.</li><li>Chất lượng âm thanh trung thực, sống động.</li></ul><h2>Ứng dụng</h2><p>Amply JBL KP6012 G2 là lựa chọn lý tưởng cho các phòng hát karaoke kinh doanh và gia đình, mang đến trải nghiệm âm thanh đỉnh cao.</p>"
   };
 
   const [mainImage, setMainImage] = useState(product.images[0]);
@@ -118,11 +123,7 @@ const ProductDetailPage = () => {
             </span>
           </div>
           <article className="prose prose-slate max-w-none text-slate-700 leading-loose">
-            <p>
-              Đây là nội dung mô tả sản phẩm của bạn. Bạn có thể sử dụng các thẻ như &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;
-              để trình bày một cách rõ ràng nhất về tính năng, công nghệ và ứng dụng của thiết bị.
-            </p>
-            {/* Thêm ảnh minh họa ở đây nếu cần */}
+            <div dangerouslySetInnerHTML={{ __html: product.body }} />
           </article>
         </div>
 
