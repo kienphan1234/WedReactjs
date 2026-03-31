@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FiPhone } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
 
 const ProductDetailPage = () => {
@@ -93,46 +94,16 @@ const ProductDetailPage = () => {
                 </div>
               ))}
             </div>
-
-            {/* ĐIỀU KHIỂN SỐ LƯỢNG & NÚT BẤM */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center border-2 border-slate-200 rounded-lg">
-                  <button
-                    onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                    className="w-12 h-12 flex items-center justify-center hover:bg-slate-100 font-bold text-xl"
-                  >
-                    -
-                  </button>
-                  <span className="w-12 text-center font-bold text-lg">{quantity}</span>
-                  <button
-                    onClick={() => setQuantity(q => q + 1)}
-                    className="w-12 h-12 flex items-center justify-center hover:bg-slate-100 font-bold text-xl"
-                  >
-                    +
-                  </button>
-                </div>
-
-                <button className="flex-1 bg-slate-900 text-white h-12 rounded-lg font-bold hover:bg-slate-800 transition-colors uppercase tracking-widest text-sm">
-                  Thêm vào giỏ hàng
-                </button>
-              </div>
-
-              <a
-                href="tel:0901234567"
-                className="w-full bg-amber-500 text-slate-950 h-14 flex items-center justify-center rounded-lg font-black hover:bg-amber-600 transition-all uppercase tracking-widest text-lg shadow-lg shadow-amber-200"
-              >
-                GỌI MUA NGAY: 090.123.4567
-              </a>
-            </div>
-
             {/* Cam kết cửa hàng */}
-            <div className="mt-8 grid grid-cols-2 gap-4">
+            <div className="mt-8 flex flex-col gap-4">
               <div className="flex items-center gap-2 text-xs font-bold text-green-600 bg-green-50 p-3 rounded-lg">
-                🛡️ BẢO HÀNH 12 THÁNG
+                BẢO HÀNH 12 THÁNG
               </div>
               <div className="flex items-center gap-2 text-xs font-bold text-blue-600 bg-blue-50 p-3 rounded-lg">
-                🚚 GIAO HÀNG TOÀN QUỐC
+                GIAO HÀNG TOÀN QUỐC
+              </div>
+              <div className="flex items-center flex-1 gap-2 text-xs font-bold text-white bg-blue-500 p-3 rounded-lg">
+                <FiPhone /> LIÊN HỆ 0912619294 - 0888533518 ĐỂ ĐẶT HÀNG
               </div>
             </div>
           </div>
